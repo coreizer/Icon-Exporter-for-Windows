@@ -26,7 +26,7 @@ namespace IconExporter
   {
     public FrmMain()
     {
-      InitializeComponent();
+      this.InitializeComponent();
     }
 
     private void ExportIcons(string fileName)
