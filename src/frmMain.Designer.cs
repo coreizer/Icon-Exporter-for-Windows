@@ -1,6 +1,6 @@
 ﻿namespace IconExporter
 {
-	partial class FrmMain
+	partial class frmMain
 	{
 		/// <summary>
 		/// 必要なデザイナー変数です。
@@ -27,27 +27,27 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-      this.buttonExport = new System.Windows.Forms.Button();
-      this.SuspendLayout();
-      // 
-      // buttonExport
-      // 
-      resources.ApplyResources(this.buttonExport, "buttonExport");
-      this.buttonExport.Name = "buttonExport";
-      this.buttonExport.UseVisualStyleBackColor = true;
-      this.buttonExport.Click += new System.EventHandler(this.ButtonExport_Click);
-      // 
-      // FrmMain
-      // 
-      resources.ApplyResources(this, "$this");
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.buttonExport);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = "FrmMain";
-      this.ResumeLayout(false);
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+			this.buttonExport = new System.Windows.Forms.Button();
+			this.SuspendLayout();
+			// 
+			// buttonExport
+			// 
+			resources.ApplyResources(this.buttonExport, "buttonExport");
+			this.buttonExport.Name = "buttonExport";
+			this.buttonExport.UseVisualStyleBackColor = true;
+			this.buttonExport.Click += new System.EventHandler(this.ButtonExport_Click);
+			// 
+			// frmMain
+			// 
+			resources.ApplyResources(this, "$this");
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.buttonExport);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
+			this.Name = "frmMain";
+			this.ResumeLayout(false);
 
 		}
 

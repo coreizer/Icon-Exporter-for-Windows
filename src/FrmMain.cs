@@ -22,43 +22,49 @@ using System.Windows.Forms;
 
 namespace IconExporter
 {
-  public partial class FrmMain : Form
-  {
-    public FrmMain()
-    {
-      this.InitializeComponent();
-    }
+	public partial class frmMain : Form
+	{
+		public frmMain()
+		{
+			this.InitializeComponent();
+		}
 
-    private void ExportIcons(string fileName)
-    {
-      SaveFileDialog SFD = new SaveFileDialog() {
-        Filter = "PNG (*.png)|*.png",
-        FileName = $"{DateTime.Now.Ticks}-icon.png"
-      };
+		private void ExportIcons(string fileName)
+		{
+			SaveFileDialog SFD = new SaveFileDialog()
+			{
+				Filter = "PNG (*.png)|*.png",
+				FileName = $"{DateTime.Now.Ticks}-icon.png"
+			};
 
-      if (SFD.ShowDialog(this) == DialogResult.OK) {
-        Icon export = Icon.ExtractAssociatedIcon(fileName);
-        Bitmap icon = new Bitmap(export.ToBitmap());
-        icon.Save(SFD.FileName, ImageFormat.Png);
-        icon.Dispose();
-      }
-    }
+			if (SFD.ShowDialog(this) == DialogResult.OK)
+			{
+				Icon export = Icon.ExtractAssociatedIcon(fileName);
+				Bitmap icon = new Bitmap(export.ToBitmap());
+				icon.Save(SFD.FileName, ImageFormat.Png);
+				icon.Dispose();
+			}
+		}
 
-    private void ButtonExport_Click(object sender, EventArgs e)
-    {
-      try {
-        OpenFileDialog OFD = new OpenFileDialog() {
-          Filter = "Executable files (*.exe)|*.exe|*.All files|*.*",
-          RestoreDirectory = false,
-        };
+		private void ButtonExport_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				OpenFileDialog OFD = new OpenFileDialog()
+				{
+					Filter = "Executable files (*.exe)|*.exe|*.All files|*.*",
+					RestoreDirectory = false,
+				};
 
-        if (OFD.ShowDialog(this) == DialogResult.OK) {
-          ExportIcons(OFD.FileName);
-        }
-      }
-      catch (Exception ex) {
-        MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-      }
-    }
-  }
+				if (OFD.ShowDialog(this) == DialogResult.OK)
+				{
+					this.ExportIcons(OFD.FileName);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+	}
 }
