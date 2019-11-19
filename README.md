@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/coreizer/Icon-Exporter-for-Windows.svg?branch=master)](https://travis-ci.org/coreizer/Icon-Exporter-for-Windows)
+
 # Icon-Exporter-for-Windows
 
 Windows向けアプリケーションからアイコンをエクスポートする機能を提供します。
