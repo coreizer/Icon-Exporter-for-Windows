@@ -7,8 +7,8 @@
     <ProjectGuid>{71B84DAE-876B-4AB8-A799-20B402379F36}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IconExporter</RootNamespace>
-    <AssemblyName>Icon Exporter for Windows</AssemblyName>
+    <RootNamespace>IconExtract</RootNamespace>
+    <AssemblyName>IconExtract for Windows</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>IconExporter.Program</StartupObject>
+    <StartupObject>IconExtract.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>app.ico</ApplicationIcon>
@@ -61,10 +61,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.is.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.ja-JP.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.zh-CHT.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.zh-Hant.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

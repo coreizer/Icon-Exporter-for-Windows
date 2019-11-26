@@ -1,4 +1,4 @@
-﻿namespace IconExporter
+﻿namespace IconExtract
 {
 	partial class frmMain
 	{
@@ -37,9 +37,12 @@
 			this.buttonExport.Name = "buttonExport";
 			this.buttonExport.UseVisualStyleBackColor = true;
 			this.buttonExport.Click += new System.EventHandler(this.ButtonExport_Click);
+			this.buttonExport.DragDrop += new System.Windows.Forms.DragEventHandler(this.frmMain_DragDrop);
+			this.buttonExport.DragEnter += new System.Windows.Forms.DragEventHandler(this.frmMain_DragEnter);
 			// 
 			// frmMain
 			// 
+			this.AllowDrop = true;
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.buttonExport);
@@ -47,6 +50,8 @@
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "frmMain";
+			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.frmMain_DragDrop);
+			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.frmMain_DragEnter);
 			this.ResumeLayout(false);
 
 		}

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Icon Exporter for Windows", "src\Icon Exporter for Windows.csproj", "{71B84DAE-876B-4AB8-A799-20B402379F36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconExtract for Windows", "src\IconExtract for Windows.csproj", "{71B84DAE-876B-4AB8-A799-20B402379F36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D7E62A9-D101-4E95-9A20-89F601A69DEB}
 	EndGlobalSection
 EndGlobal

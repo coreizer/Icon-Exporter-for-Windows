@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2018 AlphaNyne
+ * Copyright (c) 2019 Coreizer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,12 +23,12 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("Icon Exporter for Windows")]
+[assembly: AssemblyTitle("IconExtract for Windows")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Icon Exporter for Windows")]
-[assembly: AssemblyCopyright("© AlphaNyne 2016-2019")]
+[assembly: AssemblyProduct("IconExtract for Windows")]
+[assembly: AssemblyCopyright("© Coreizer 2016-2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

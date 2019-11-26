@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2018 AlphaNyne
+ * Copyright (c) 2019 Coreizer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
-namespace IconExporter
+namespace IconExtract
 {
 	public partial class frmMain : Form
 	{
@@ -29,7 +29,7 @@ namespace IconExporter
 			this.InitializeComponent();
 		}
 
-		private void ExportIcons(string fileName)
+		private void IconExtract(string fileName)
 		{
 			SaveFileDialog SFD = new SaveFileDialog()
 			{
@@ -39,10 +39,10 @@ namespace IconExporter
 
 			if (SFD.ShowDialog(this) == DialogResult.OK)
 			{
-				Icon export = Icon.ExtractAssociatedIcon(fileName);
-				Bitmap icon = new Bitmap(export.ToBitmap());
-				icon.Save(SFD.FileName, ImageFormat.Png);
-				icon.Dispose();
+				Icon extractIcon = Icon.ExtractAssociatedIcon(fileName);
+				Bitmap iconMap = new Bitmap(extractIcon.ToBitmap());
+				iconMap.Save(SFD.FileName, ImageFormat.Png);
+				iconMap.Dispose();
 			}
 		}
 
@@ -58,13 +58,29 @@ namespace IconExporter
 
 				if (OFD.ShowDialog(this) == DialogResult.OK)
 				{
-					this.ExportIcons(OFD.FileName);
+					this.IconExtract(OFD.FileName);
 				}
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+
+		private void frmMain_DragDrop(object sender, DragEventArgs e)
+		{
+			string[] filePaths = (string[])e.Data.GetData(DataFormats.FileDrop);
+			foreach (string path in filePaths)
+			{
+				this.IconExtract(path);
+			}
+		}
+
+		private void frmMain_DragEnter(object sender, DragEventArgs e)
+		{
+			e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ?
+				  DragDropEffects.All
+				: DragDropEffects.None;
 		}
 	}
 }
