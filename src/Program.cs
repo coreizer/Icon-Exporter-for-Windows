@@ -15,22 +15,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
-using System.Windows.Forms;
-
 namespace IconExtract
 {
-  static class Program
-  {
-    /// <summary>
-    /// アプリケーションのメイン エントリ ポイントです。
-    /// </summary>
-    [STAThread]
-    static void Main()
-    {
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new frmMain());
-    }
-  }
+   using System;
+   using System.Windows.Forms;
+
+   static class Program
+   {
+      /// <summary>
+      /// アプリケーションのメイン エントリ ポイントです。
+      /// </summary>
+      [STAThread]
+      static void Main()
+      {
+         Application.EnableVisualStyles();
+         Application.SetCompatibleTextRenderingDefault(false);
+         Application.Run(new frmMain());
+      }
+   }
 }

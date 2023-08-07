@@ -15,72 +15,65 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Windows.Forms;
-
 namespace IconExtract
 {
-	public partial class frmMain : Form
-	{
-		public frmMain()
-		{
-			this.InitializeComponent();
-		}
+   using System;
+   using System.Drawing;
+   using System.Drawing.Imaging;
+   using System.Windows.Forms;
 
-		private void IconExtract(string fileName)
-		{
-			SaveFileDialog SFD = new SaveFileDialog()
-			{
-				Filter = "PNG (*.png)|*.png",
-				FileName = $"{DateTime.Now.Ticks}-icon.png"
-			};
+   public partial class frmMain : Form
+   {
+      public frmMain()
+      {
+         InitializeComponent();
+      }
 
-			if (SFD.ShowDialog(this) == DialogResult.OK)
-			{
-				Icon extractIcon = Icon.ExtractAssociatedIcon(fileName);
-				Bitmap iconMap = new Bitmap(extractIcon.ToBitmap());
-				iconMap.Save(SFD.FileName, ImageFormat.Png);
-				iconMap.Dispose();
-			}
-		}
+      private void IconExtract(string fileName)
+      {
+         var SFD = new SaveFileDialog() {
+            Filter = "PNG (*.png)|*.png",
+            FileName = $"{DateTime.Now.Ticks}-icon.png"
+         };
 
-		private void ButtonExport_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				OpenFileDialog OFD = new OpenFileDialog()
-				{
-					Filter = "Executable files (*.exe)|*.exe|*.All files|*.*",
-					RestoreDirectory = false,
-				};
+         if (SFD.ShowDialog(this) == DialogResult.OK) {
+            var extractIcon = Icon.ExtractAssociatedIcon(fileName);
+            var iconMap = new Bitmap(extractIcon.ToBitmap());
+            iconMap.Save(SFD.FileName, ImageFormat.Png);
+            iconMap.Dispose();
+         }
+      }
 
-				if (OFD.ShowDialog(this) == DialogResult.OK)
-				{
-					this.IconExtract(OFD.FileName);
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
+      private void ButtonExport_Click(object sender, EventArgs e)
+      {
+         try {
+            var OFD = new OpenFileDialog() {
+               Filter = "Executable files (*.exe)|*.exe|*.All files|*.*",
+               RestoreDirectory = false,
+            };
 
-		private void frmMain_DragDrop(object sender, DragEventArgs e)
-		{
-			string[] filePaths = (string[])e.Data.GetData(DataFormats.FileDrop);
-			foreach (string path in filePaths)
-			{
-				this.IconExtract(path);
-			}
-		}
+            if (OFD.ShowDialog(this) == DialogResult.OK) {
+               IconExtract(OFD.FileName);
+            }
+         }
+         catch (Exception ex) {
+            MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
+      }
 
-		private void frmMain_DragEnter(object sender, DragEventArgs e)
-		{
-			e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ?
-				  DragDropEffects.All
-				: DragDropEffects.None;
-		}
-	}
+      private void frmMain_DragDrop(object sender, DragEventArgs e)
+      {
+         var filePaths = (string[])e.Data.GetData(DataFormats.FileDrop);
+         foreach (var path in filePaths) {
+            IconExtract(path);
+         }
+      }
+
+      private void frmMain_DragEnter(object sender, DragEventArgs e)
+      {
+         e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ?
+               DragDropEffects.All
+             : DragDropEffects.None;
+      }
+   }
 }
