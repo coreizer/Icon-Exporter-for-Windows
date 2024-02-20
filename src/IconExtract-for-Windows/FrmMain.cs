@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2019 Coreizer
+ * Copyright (c) 2024 Coreizer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ namespace IconExtract
    {
       public frmMain()
       {
-         InitializeComponent();
+         this.InitializeComponent();
       }
 
       private void IconExtract(string fileName)
@@ -53,7 +53,7 @@ namespace IconExtract
             };
 
             if (OFD.ShowDialog(this) == DialogResult.OK) {
-               IconExtract(OFD.FileName);
+               this.IconExtract(OFD.FileName);
             }
          }
          catch (Exception ex) {
@@ -65,7 +65,7 @@ namespace IconExtract
       {
          var filePaths = (string[])e.Data.GetData(DataFormats.FileDrop);
          foreach (var path in filePaths) {
-            IconExtract(path);
+            this.IconExtract(path);
          }
       }
 

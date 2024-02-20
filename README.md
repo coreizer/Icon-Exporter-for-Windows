@@ -2,12 +2,12 @@
 
 # IconExtract for Windows
 
-Windows向けアプリケーションからアイコンをエクスポートする機能を提供します。
+Windows 向けアプリケーションからアイコンをエクスポートする機能を提供します。
 
 ## 著者
 
-* **Coreizer**
+- coreizer
 
-## License
+## ライセンス
 
-このプロジェクトのライセンスはMIT Licenseです。 詳細については[ライセンスファイル](LICENSE)を見てください
+このプロジェクトは[MIT License](https://opensource.org/license/mit/)に基づいてライセンスされています。詳細については、[ライセンスファイル](LICENSE)を参考してください。
