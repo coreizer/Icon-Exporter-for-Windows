@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/coreizer/Icon-Exporter-for-Windows.svg?branch=master)](https://travis-ci.org/coreizer/Icon-Exporter-for-Windows)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/coreizer/IconExtract-for-Windows/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/coreizer/IconExtract-for-Windows/tree/master)
 
 # IconExtract for Windows
 
